@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        show how to hook with the 'clean' lifecycle and 'pre-clean' and 'clean' phase
+        run this command
+            mvn clean
+
+        and this command
+            mvn clean:pre-clean
+
+    -->
+    <groupId>com.surasint.test</groupId>
+    <artifactId>maven01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>whatever</id>
+                        <phase>pre-clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>pre-clean called</echo>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>whatever2</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>clean called</echo>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>whatever3</id>
+                        <phase>post-clean</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>post-clean called</echo>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
