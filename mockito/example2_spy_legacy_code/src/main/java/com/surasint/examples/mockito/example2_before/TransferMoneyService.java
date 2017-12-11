@@ -17,5 +17,4 @@ public class TransferMoneyService {
         depositeMoneyService.deposit(toAccount,amount);
     }
 
-
 }

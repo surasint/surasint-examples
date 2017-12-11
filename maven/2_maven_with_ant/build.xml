@@ -1,0 +1,7 @@
+<project name="mavn_with_ant_example" basedir=".">
+
+    <target name="install">
+		<echo message="Hello from ANT" />
+    </target>
+
+</project>

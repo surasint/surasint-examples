@@ -1,6 +1,6 @@
 <project name="mavn_with_ant_example" basedir=".">
 
-    <property name="prop1" location="YES" />
+    <property name="prop1" value="YES" />
     <property name="runningLocation" location="" />
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
@@ -10,7 +10,7 @@
 
     <target name="install">
         <if>
-            <equals arg1="${prop1}" arg2="bar" />
+            <equals arg1="${prop1}" arg2="YES" />
             <then>
                 <echo message="The value of prop1 is YES" />
             </then>

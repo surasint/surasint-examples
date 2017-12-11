@@ -13,7 +13,7 @@ public class TransferMoneyService {
         this.withdrawMoneyService = withdrawMoneyService;
     }
 
-    public void transfer(String fromAccount, String toAccount, double amount){
+    public void transfer( double amount, DepositMoneyService depositMoneyService, WithdrawMoneyService withdrawMoneyService, String fromAccount, String toAccount){
         withdrawMoneyService.withdraw(fromAccount,amount);
         depositMoneyService.deposit(toAccount,amount);
     }
