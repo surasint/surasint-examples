@@ -5,5 +5,5 @@ run this command in console
 try to access this url
     http://localhost:8080/api/count
 
-For more tutorial, visit here:
+For more detail, visit here:
     https://www.surasint.com/
