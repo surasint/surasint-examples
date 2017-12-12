@@ -14,6 +14,4 @@ public class TestController {
 		model.put("this_time",new Date().toString());
 		return "testjsp-view";
 	}
-
-
 }
