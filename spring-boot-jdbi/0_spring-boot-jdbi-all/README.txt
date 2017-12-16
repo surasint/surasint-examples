@@ -13,12 +13,16 @@ How to setup development environment
    - run
           mvn clean spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
 
+How to debug
+    - use remove debugging
+
 How to reload changes
     - 2 alternative for java file:
         - File -> Settings -> Compiler -> check "Build Project Automatically"
         - or when you can to reload by just rebuild by editor ( menu -> build -> build project)
 
 What it can do:
+    - http://localhost:8080/api/count
     - have it own context 
         - http://localhost:8080/test/xxx
     - work with jsp
