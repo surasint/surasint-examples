@@ -18,6 +18,11 @@ public class TestRestController {
         return i++;
     }
 
+    @GetMapping("/api/count2")
+    public Integer count2() {
+        return i++;
+    }
+
     @Autowired
     UserService userService;
     @GetMapping("/api/user/list")

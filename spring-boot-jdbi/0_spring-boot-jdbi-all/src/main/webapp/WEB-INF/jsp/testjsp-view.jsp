@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div><%="hello for jsp"%></div>
+<div><%="hello for jsp :"%> ${this_time}</div>
 </body>
 
 </html>

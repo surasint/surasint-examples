@@ -1,0 +1,42 @@
+Intro
+
+    This is an example how to use Spring Boot and JDBI in more practical way
+
+
+How to setup development environment
+
+   - create database named "testdb"
+   - run db script (dbscript.sql)
+   - open with Intellij by pointing to c:/mystery-spin-service
+   - run
+          mvn clean package
+   - run
+          mvn clean spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+
+How to debug
+    - use remove debugging
+
+How to reload changes
+    - 2 alternative for java file:
+        - File -> Settings -> Compiler -> check "Build Project Automatically"
+        - or when you can to reload by just rebuild by editor ( menu -> build -> build project)
+
+What it can do:
+    - http://localhost:8080/api/count
+    - have it own context
+        - http://localhost:8080/test/xxx
+    - work with jsp
+        - http://localhost:8080/test/testjsp
+    - work with static content
+        - http://localhost:8080/test/static/test-static.txt
+    - work with db transaction by JDBI
+         - http://localhost:8080/test/api/user/insertOK
+         - http://localhost:8080/test/api/user/insertNotOK
+    - test multiple requests have multiple transactions
+         - http://localhost:8080/test/api/user/listTwoTimes
+    - test same request has same transaction across dao
+         - http://localhost:8080/test/api/user/listTwoDaos
+    - auto reload files (java, jsp, static files)
+
+TODO:
+    how to do integration test
