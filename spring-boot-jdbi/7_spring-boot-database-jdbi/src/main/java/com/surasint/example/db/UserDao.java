@@ -1,7 +1,5 @@
 package com.surasint.example.db;
 
-import com.surasint.example.db.util.ResultSetHelper;
-import com.surasint.example.util.UniqueObjectIdHolder;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
 import org.skife.jdbi.v2.StatementContext;
@@ -23,7 +21,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class UserDao2 {
+public class UserDao {
 
     @Qualifier("dataSource")
     @Autowired
@@ -31,8 +29,6 @@ public class UserDao2 {
 
     public List<UserBean> list(){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
-        System.out.println("userDao2:datasource:"+ UniqueObjectIdHolder.getId(dataSource));
-        System.out.println("userDao2:connection:"+ UniqueObjectIdHolder.getId(conn));
         Handle handle = DBI.open(conn);
         UserSQLs userQLs = handle.attach(UserSQLs.class);
         return userQLs.list();
@@ -40,7 +36,6 @@ public class UserDao2 {
 
     public Integer insert(UserBean item){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
-        System.out.println(UniqueObjectIdHolder.getId(conn));
         Handle handle = DBI.open(conn);
         UserSQLs userSQLs = handle.attach(UserSQLs.class);
         return userSQLs.insert(item);
@@ -51,7 +46,7 @@ public class UserDao2 {
         @SqlQuery("select * from users")
         List<UserBean> list();
 
-        @SqlUpdate("insert into test (username)" +
+        @SqlUpdate("insert into users (username)" +
                     " values(:username) ")
         @GetGeneratedKeys
         Integer insert(@BindBean UserBean test);
@@ -61,8 +56,8 @@ public class UserDao2 {
         @Override
         public UserBean map(int i, ResultSet r, StatementContext statementContext) throws SQLException {
             UserBean bean = new UserBean();
-            bean.setId(ResultSetHelper.get(r,"id"));
-            bean.setUsername(ResultSetHelper.get(r,"username"));
+            bean.setId((Integer) r.getObject("id"));
+            bean.setUsername(r.getString("username"));
             return bean;
         }
     }
