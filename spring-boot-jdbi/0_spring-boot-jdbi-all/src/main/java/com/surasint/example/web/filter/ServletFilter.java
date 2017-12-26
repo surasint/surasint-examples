@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/api/count")
+@WebFilter(urlPatterns = "/*")
 public class ServletFilter implements Filter{
     private static final Logger logger = LoggerFactory.getLogger(ServletFilter.class);
 
