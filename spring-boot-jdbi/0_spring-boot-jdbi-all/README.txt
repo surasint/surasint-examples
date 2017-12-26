@@ -10,8 +10,8 @@ you can try to access these URLs
         http://localhost:8080/test/api/user/insertOK
    To create new row in database and throw exception (it will rollback)
         http://localhost:8080/test/api/user/insertNotOK
-   To create list rows from database
-        http://localhost:8080/test/api/user//api/user/list
+   To see rows from database
+        http://localhost:8080/test/api/user/list
    To test filter:
         http://localhost:8080/test/api/count
         http://localhost:8080/test/api/count2
