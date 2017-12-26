@@ -27,16 +27,7 @@ public class TestRestController {
     UserService userService;
     @GetMapping("/api/user/list")
     public List<UserBean> list() {
-        return userService.listTwoTimes();
-    }
-    @GetMapping("/api/user/listTwoTimes")
-    public List<UserBean> listTwoTimes() {
-        return userService.listTwoTimes();
-    }
-
-    @GetMapping("/api/user/listTwoDaos")
-    public List<UserBean> listTwoDao() {
-        return userService.listTwoDaos();
+        return userService.list();
     }
 
     @GetMapping("/api/user/insertOK")

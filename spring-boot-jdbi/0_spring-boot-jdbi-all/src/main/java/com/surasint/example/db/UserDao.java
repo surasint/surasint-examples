@@ -1,7 +1,5 @@
 package com.surasint.example.db;
 
-import com.surasint.example.db.util.ResultSetHelper;
-import com.surasint.example.util.UniqueObjectIdHolder;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
 import org.skife.jdbi.v2.StatementContext;
@@ -31,8 +29,6 @@ public class UserDao {
 
     public List<UserBean> list(){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
-        System.out.println("userDao:datasource:"+ UniqueObjectIdHolder.getId(dataSource));
-        System.out.println("userDao:connection:"+ UniqueObjectIdHolder.getId(conn));
         Handle handle = DBI.open(conn);
         UserSQLs userQLs = handle.attach(UserSQLs.class);
         return userQLs.list();
@@ -40,7 +36,6 @@ public class UserDao {
 
     public Integer insert(UserBean item){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
-        System.out.println(UniqueObjectIdHolder.getId(conn));
         Handle handle = DBI.open(conn);
         UserSQLs userSQLs = handle.attach(UserSQLs.class);
         return userSQLs.insert(item);
@@ -61,8 +56,8 @@ public class UserDao {
         @Override
         public UserBean map(int i, ResultSet r, StatementContext statementContext) throws SQLException {
             UserBean bean = new UserBean();
-            bean.setId(ResultSetHelper.get(r,"id"));
-            bean.setUsername(ResultSetHelper.get(r,"username"));
+            bean.setId((Integer) r.getObject("id"));
+            bean.setUsername(r.getString("username"));
             return bean;
         }
     }

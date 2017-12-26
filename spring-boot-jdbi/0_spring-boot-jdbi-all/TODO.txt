@@ -1,3 +1,6 @@
+How map JDBI with running id
+How map JDBI with columns
+
 Intro
 
     This is an example how to use Spring Boot and JDBI in more practical way

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @WebFilter(urlPatterns = "/api/count")
-public class ExampleFilter2 implements Filter{
-    private static final Logger logger = LoggerFactory.getLogger(ExampleFilter2.class);
+public class ServletFilter implements Filter{
+    private static final Logger logger = LoggerFactory.getLogger(ServletFilter.class);
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -19,7 +19,7 @@ public class ExampleFilter2 implements Filter{
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        logger.info("filter2:"+ ((HttpServletRequest)servletRequest).getRequestURL());
+        logger.info("ServletFilter:"+ ((HttpServletRequest)servletRequest).getRequestURL());
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

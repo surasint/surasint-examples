@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Component
-public class ExampleFilter1 implements Filter{
-    private static final Logger logger = LoggerFactory.getLogger(ExampleFilter1.class);
+public class SpringBootFilter implements Filter{
+    private static final Logger logger = LoggerFactory.getLogger(SpringBootFilter.class);
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -19,7 +19,7 @@ public class ExampleFilter1 implements Filter{
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        logger.info("filter1:"+ ((HttpServletRequest)servletRequest).getRequestURL());
+        logger.info("SpringBootFilter:"+ ((HttpServletRequest)servletRequest).getRequestURL());
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
