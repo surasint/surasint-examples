@@ -15,6 +15,7 @@ public class TestRestController {
 
     @Autowired
     UserService userService;
+
     @GetMapping("/api/user/list")
     public List<UserBean> list() {
         return userService.list();
@@ -41,4 +42,20 @@ public class TestRestController {
         return "ok";
     }
 
+    @GetMapping("/api/user/insertNotOKNotRollback")
+    public String insertNotOKNotRollback() throws Exception {
+        userService.insertAndFailButNotRollback();
+        return "ok";
+    }
+
+    @GetMapping("/api/user/insertNotOKAndRollback")
+    public String insertNotOKAndRollback() throws Exception {
+        userService.insertAndFailAndRollback();
+        return "ok";
+    }
+
+    @GetMapping("/api/user/deleteAll")
+    public Integer deleteAll() {
+        return userService.deleteAll();
+    }
 }

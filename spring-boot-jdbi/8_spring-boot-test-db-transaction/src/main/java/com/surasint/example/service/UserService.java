@@ -44,7 +44,6 @@ public class UserService {
     public Integer insertOK(){
         UserBean test = new UserBean();
         test.setUsername("username"+new Date().getTime());
-
         return userDao.insert(test);
     }
 
@@ -52,13 +51,31 @@ public class UserService {
     public void insertAndFail(){
         UserBean test = new UserBean();
         test.setUsername("username"+new Date().getTime());
-
         userDao.insert(test);
+
         throw new RuntimeException("test fail");
     }
 
     @Transactional
-    public void deleteAll(){
-        userDao.deleteAll();
+    public void insertAndFailButNotRollback() throws Exception {
+        UserBean test = new UserBean();
+        test.setUsername("username"+new Date().getTime());
+        userDao.insert(test);
+
+        throw new Exception("test fail");
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void insertAndFailAndRollback() throws Exception {
+        UserBean test = new UserBean();
+        test.setUsername("username"+new Date().getTime());
+        userDao.insert(test);
+
+        throw new Exception("test fail");
+    }
+
+    @Transactional
+    public Integer deleteAll(){
+        return userDao.deleteAll();
     }
 }

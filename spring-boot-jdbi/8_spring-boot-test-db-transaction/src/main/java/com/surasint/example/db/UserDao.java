@@ -41,7 +41,7 @@ public class UserDao {
     public Integer insert(UserBean item){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
         System.out.println("userDao:insert:datasource:"+ UniqueObjectIdHolder.getId(dataSource));
-        System.out.println("userDao:insertLconnection:"+ UniqueObjectIdHolder.getId(conn));
+        System.out.println("userDao:insert:connection:"+ UniqueObjectIdHolder.getId(conn));
         Handle handle = DBI.open(conn);
         UserSQLs userSQLs = handle.attach(UserSQLs.class);
         return userSQLs.insert(item);
@@ -49,8 +49,8 @@ public class UserDao {
 
     public Integer deleteAll(){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
-        System.out.println("userDao:insert:datasource:"+ UniqueObjectIdHolder.getId(dataSource));
-        System.out.println("userDao:insertLconnection:"+ UniqueObjectIdHolder.getId(conn));
+        System.out.println("userDao:deleteAll:datasource:"+ UniqueObjectIdHolder.getId(dataSource));
+        System.out.println("userDao:deleteAll:connection:"+ UniqueObjectIdHolder.getId(conn));
         Handle handle = DBI.open(conn);
         UserSQLs userSQLs = handle.attach(UserSQLs.class);
         return userSQLs.deleteAll();
