@@ -28,6 +28,7 @@ public class UserDao2 {
     private DataSource dataSource;
 
     public List<UserBean> list(){
+        System.out.println(dataSource);
         Connection conn =  DataSourceUtils.getConnection(dataSource);
         Handle handle = DBI.open(conn);
         UserSQLs userQLs = handle.attach(UserSQLs.class);

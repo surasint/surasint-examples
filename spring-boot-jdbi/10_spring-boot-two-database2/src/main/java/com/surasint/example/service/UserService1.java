@@ -1,8 +1,7 @@
 package com.surasint.example.service;
 
 import com.surasint.example.db.UserBean;
-import com.surasint.example.db.UserDao;
-import com.surasint.example.db.UserDao2;
+import com.surasint.example.db.UserDao1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +13,7 @@ import java.util.List;
 public class UserService1 {
 
     @Autowired
-    private UserDao userDao;
+    private UserDao1 userDao;
 
     @Autowired
     private UserService2 userService2;
