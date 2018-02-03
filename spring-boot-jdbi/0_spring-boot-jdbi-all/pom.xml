@@ -44,6 +44,14 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+        <!-- to deploy as a war in tomcat -->
+        <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        -->
         <!-- for db annotation, ex @Transactional -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
