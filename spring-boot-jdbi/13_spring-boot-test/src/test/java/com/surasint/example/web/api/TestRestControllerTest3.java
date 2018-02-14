@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestRestControllerTestIntegrationTestMock {
+public class TestRestControllerTest3 {
 
 
     @Autowired

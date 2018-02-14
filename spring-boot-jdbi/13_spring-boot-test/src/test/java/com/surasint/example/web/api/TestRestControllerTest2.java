@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(TestRestController.class)
-public class TestRestControllerUnitTestWithEndpoint {
+public class TestRestControllerTest2 {
 
     @Autowired
     private MockMvc mvc;
