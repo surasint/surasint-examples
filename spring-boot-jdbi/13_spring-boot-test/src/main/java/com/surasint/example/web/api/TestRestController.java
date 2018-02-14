@@ -12,7 +12,7 @@ public class TestRestController {
     private CountService countService;
 
     @GetMapping("/api/count")
-    public String count() {
+    public String showCount() {
         return "Count result:"+countService.count();
     }
 }

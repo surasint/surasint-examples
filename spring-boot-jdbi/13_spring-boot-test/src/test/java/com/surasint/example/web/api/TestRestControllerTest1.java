@@ -25,7 +25,7 @@ public class TestRestControllerTest1 {
         when(mockCountService.count()).thenReturn(100);
 
         //when
-        String result = target.count();
+        String result = target.showCount();
 
         //then
         assertEquals("Count result:100", result);
