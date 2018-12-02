@@ -27,16 +27,19 @@ public class UserDao {
     @Autowired
     private DataSource dataSource;
 
-    public List<UserBean> list(){
+    Handle getHandle(){
         Connection conn =  DataSourceUtils.getConnection(dataSource);
-        Handle handle = DBI.open(conn);
+        return DBI.open(conn);
+    }
+
+    public List<UserBean> list(){
+        Handle handle = getHandle();
         UserSQLs userQLs = handle.attach(UserSQLs.class);
         return userQLs.list();
     }
 
     public Integer insert(UserBean item){
-        Connection conn =  DataSourceUtils.getConnection(dataSource);
-        Handle handle = DBI.open(conn);
+        Handle handle = getHandle();
         UserSQLs userSQLs = handle.attach(UserSQLs.class);
         return userSQLs.insert(item);
     }

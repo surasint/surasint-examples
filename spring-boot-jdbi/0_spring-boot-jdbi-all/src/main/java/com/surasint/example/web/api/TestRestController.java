@@ -1,6 +1,7 @@
 package com.surasint.example.web.api;
 
 import com.surasint.example.db.UserBean;
+import com.surasint.example.service.CountService;
 import com.surasint.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +12,12 @@ import java.util.List;
 @RestController
 public class TestRestController {
 
-    private static int i;
+    @Autowired
+    private CountService countService;
 
     @GetMapping("/api/count")
-    public Integer count() {
-        return i++;
-    }
-
-    @GetMapping("/api/count2")
-    public Integer count2() {
-        return i++;
+    public String showCount() {
+        return "Count result:"+countService.count();
     }
 
     @Autowired
