@@ -31,7 +31,7 @@ public class UserDaoInMemTest {
     public void before() throws ClassNotFoundException, IOException {
         //setup in memory database
         Class.forName("org.h2.Driver");
-        DBI dbi = new DBI("jdbc:h2:mem:test;mode=MySQL");
+        DBI dbi = new DBI("jdbc:h2:mem:test");
         handle = dbi.open();
         handle.execute("set mode MySQL;");
 
