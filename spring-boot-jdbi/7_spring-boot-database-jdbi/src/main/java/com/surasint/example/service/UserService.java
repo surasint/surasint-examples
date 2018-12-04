@@ -3,13 +3,13 @@ package com.surasint.example.service;
 import com.surasint.example.db.UserBean;
 import com.surasint.example.db.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
-@Component
+@Service
 public class UserService {
 
     @Autowired
