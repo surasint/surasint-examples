@@ -1,6 +1,5 @@
 package com.surasint.example.db;
 
-import com.surasint.example.db.util.ResultSetHelper;
 import com.surasint.example.util.UniqueObjectIdHolder;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
@@ -62,8 +61,8 @@ public class UserDao2 {
         @Override
         public UserBean map(int i, ResultSet r, StatementContext statementContext) throws SQLException {
             UserBean bean = new UserBean();
-            bean.setId(ResultSetHelper.get(r,"id"));
-            bean.setUsername(ResultSetHelper.get(r,"username"));
+            bean.setId((Integer)r.getObject("id"));
+            bean.setUsername(r.getString("username"));
             return bean;
         }
     }
