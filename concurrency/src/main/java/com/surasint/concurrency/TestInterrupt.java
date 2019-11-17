@@ -30,6 +30,7 @@ public class TestInterrupt {
                 Thread.sleep(1_000);
             } catch (InterruptedException e) {
                 System.out.println("interrupted");
+                //Try to uncomment this
 //                Thread.currentThread().interrupt(); // preserve interruption status
                 break;
             }
