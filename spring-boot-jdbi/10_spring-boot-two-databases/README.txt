@@ -1,4 +1,4 @@
-create database named "testdb"
+create database named "testdb" and "testdb2"
 run db script (dbscript.sql)
 change database username and password in applicaiton.properties
 run this command in console
