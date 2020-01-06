@@ -11,7 +11,7 @@ you can try to access these URLs
    To create new row in database and throw exception (it will rollback)
         http://localhost:8080/api/user/insertNotOK
    To see rows from database
-        http://localhost:8080/api/user//api/user/list
+        http://localhost:8080/api/user/list
 
 For more detail, visit here:
     https://www.surasint.com/spring-boot-database-transaction-jdbi/
