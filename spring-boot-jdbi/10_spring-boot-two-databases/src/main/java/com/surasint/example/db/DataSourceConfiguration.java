@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.transaction.ChainedTransactionManager;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
@@ -41,4 +42,10 @@ public class DataSourceConfiguration {
         DataSourceTransactionManager txm  = new DataSourceTransactionManager(datasource);
         return txm;
     }
+
+    @Bean(name = "chainedTransactionManager")
+    public ChainedTransactionManager getChainedTransactionManager(@Qualifier ("tm1") DataSourceTransactionManager tm1, @Qualifier ("tm2") DataSourceTransactionManager tm2){
+        return new ChainedTransactionManager(tm1, tm2);
+    }
+
 }

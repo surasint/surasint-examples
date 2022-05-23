@@ -3,6 +3,7 @@ package com.surasint.example.web.api;
 import com.surasint.example.db.UserBean;
 import com.surasint.example.service.UserService1;
 import com.surasint.example.service.UserService2;
+import com.surasint.example.service.UserServiceAll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,9 @@ public class TestRestController {
 
     @Autowired
     UserService2 userService2;
+
+    @Autowired
+    UserServiceAll userServiceAll;
 
     @GetMapping("/api/user1/list")
     public List<UserBean> list() {
@@ -51,5 +55,17 @@ public class TestRestController {
         userService1.insertBothNotOK();
         return "never happen";
     }
+
+    @GetMapping("/api/userAll/insertOK")
+    public String insertAllOK() {
+        userServiceAll.insertAll();
+        return "OK";
+    }
+    @GetMapping("/api/userAll/insertNotOK")
+    public String insertAllNotOK() {
+        userServiceAll.insertAllNotOK();
+        return "OK";
+    }
+
 
 }
