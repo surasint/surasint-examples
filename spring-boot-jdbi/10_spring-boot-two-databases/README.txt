@@ -20,5 +20,4 @@ you can try to access these URLs
         http://localhost:8080/api/user1/list
         http://localhost:8080/api/user2/list
 
-For more detail, visit here:
-    https://www.surasint.com/spring-boot-multiple-databases/
+If this example helps you, please donate some Bitcoin(BTC) to 35E8iE7e2YCw3aKRe4NsFkuHAwKkPHtCtg
