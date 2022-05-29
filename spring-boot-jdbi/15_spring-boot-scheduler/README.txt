@@ -5,5 +5,4 @@ run this command in console
 try to look at console log
 
 
-For more detail, visit here:
-    https://www.surasint.com/spring-boot-scheduler/
+I have spent quite some time to create such this example. If this example helps you, please donate some Bitcoin(BTC) to 35E8iE7e2YCw3aKRe4NsFkuHAwKkPHtCtg

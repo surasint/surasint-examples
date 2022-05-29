@@ -11,8 +11,7 @@ run this command
 run this command
     java -Dmy_system_properties=test1 -jar spring-boot-17-1.0-SNAPSHOT.jar
 
-For more detail, visit here:
-    https://www.surasint.com/spring-boot-pass-system-properties-in-command-line/
+I have spent quite some time to create such this example. If this example helps you, please donate some Bitcoin(BTC) to 35E8iE7e2YCw3aKRe4NsFkuHAwKkPHtCtg
 
 Trick, for Spring version 1.5.x and below, use this command:
     mvn clean spring-boot:run -Drun.jvmArguments="-Dmy_system_properties=test1"

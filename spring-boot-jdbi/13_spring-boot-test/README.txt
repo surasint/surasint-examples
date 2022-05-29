@@ -5,5 +5,4 @@ run these tests
    to test with mock and rest api: TestRestControllerTest2
    to test with integration test: TestRestControllerTest3
 
-For more detail, visit here:
-    https://www.surasint.com/spring-boot-tests/
+I have spent quite some time to create such this example. If this example helps you, please donate some Bitcoin(BTC) to 35E8iE7e2YCw3aKRe4NsFkuHAwKkPHtCtg

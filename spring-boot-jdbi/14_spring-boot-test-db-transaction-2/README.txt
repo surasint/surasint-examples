@@ -13,5 +13,4 @@ you can try to access these URLs
    To see rows from database
         http://localhost:8080/api/user//api/user/list
 
-For more detail, visit here:
-    https://www.surasint.com/spring-boot-database-transaction-jdbi/
+I have spent quite some time to create such this example. If this example helps you, please donate some Bitcoin(BTC) to 35E8iE7e2YCw3aKRe4NsFkuHAwKkPHtCtg
